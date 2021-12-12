@@ -1,0 +1,9 @@
+#packages we need and specific version
+
+django==2.2  #without == will install latest version
+#updates to Python package can break your project
+
+djangorestframework==3.9.2
+
+#latest when he created course APRIL 2019
+# https://pypi.org/  python package index 
