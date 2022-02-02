@@ -1,6 +1,6 @@
 from django.db import models
 
-
+####################################################################
 from django.contrib.auth.models import BaseUserManager
 
 class UserProfileManager(BaseUserManager):
@@ -19,7 +19,7 @@ class UserProfileManager(BaseUserManager):
         user.is_staff = True
         user.save(using=self._db)
         return user
-
+#######################################################################
 
 from django.contrib.auth.models import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
@@ -44,4 +44,13 @@ class UserProfile(AbstractBaseUser,PermissionsMixin):
     def __str__(self):              
         return self.email
 
+###################################################################
+from django.conf import settings
 
+class ProfileFeedItem(models.Model): #Profile status update
+    user_profile = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE) #PK in class UserProfile() but this class may change
+    status_text = models.CharField(max_length=255)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.status_text
