@@ -86,8 +86,8 @@ from rest_framework import filters  # search profile feature
 class UserProfileViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.UserProfileSerializer
     queryset = models.UserProfile.objects.all()
-
-    authentication_classes = (TokenAuthentication,) #authentication and permission 
+    
+    authentication_classes = (TokenAuthentication, ) #authentication and permission 
     #you could add more authentications to this class
     permission_classes = (permissions.UpdateOwnProfile,) #authentication and permission 
 

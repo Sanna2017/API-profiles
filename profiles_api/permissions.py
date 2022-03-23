@@ -10,7 +10,7 @@ class UpdateOwnProfile(permissions.BasePermission):
             return True
 
         # ELSE - update, delete ......
-        return obj.id == request.user.id
+        return obj.id == request.user.id # not checking if AUTH???????????????????
         # will return TRUE or FALSE 
 
 #######################################################
@@ -20,10 +20,10 @@ class UpdateOwnStatus(permissions.BasePermission):
 
     def has_object_permission(self, request, view, obj):
         """Check the user is trying to update their own status"""
-        if request.method in permissions.SAFE_METHODS:
+        if request.method in permissions.SAFE_METHODS: #GET is SAFE METHOD
             return True
 
-        return obj.user_profile.id == request.user.id
+        return obj.user_profile.id == request.user.id # not checking if AUTH???????????????????
 
         # if the object that is being modified has a user_profile.ID same as 
         # the request.user.ID then this will return TRUE and it will allow the permission 
