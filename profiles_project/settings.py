@@ -27,7 +27,7 @@ SECRET_KEY = 'gt687t&90iwi3n3jo@+n%y4ihgus#f(t4f7gch#)2e7)&rhetu'
 DEBUG = bool(int(os.environ.get('DEBUG',1)))
 
 #enable access via specific domain names
-ALLOWED_HOSTS = ['ec2-18-169-184-140.eu-west-2.compute.amazonaws.com',
+ALLOWED_HOSTS = ['ec2-16-170-157-27.eu-north-1.compute.amazonaws.com',
                  '127.0.0.1']
 
 
